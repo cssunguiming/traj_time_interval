@@ -210,11 +210,11 @@ def run(epoch, model, optimizer, device, train_data, train_traj_idxx, valid_data
             # writer.add_scalars("Lr", {"Train": optimizer._print_lr()}, epoch_i)
 
 
-def main(Epoch=200, Bert_Pretrain=False, Batch_size=8, Pretrained=False, log='predict'):
+def main(Epoch=400, Bert_Pretrain=False, Batch_size=8, Pretrained=False, log='predict'):
 
-    head_n = 10
-    d_model = 500
-    N_layers = 10
+    head_n = 12
+    d_model = 600
+    N_layers = 12
     dropout = 0.4
 
     # head_n = 10
@@ -258,7 +258,7 @@ def main(Epoch=200, Bert_Pretrain=False, Batch_size=8, Pretrained=False, log='pr
 
     optimizer = Trans_Optim(
         torch.optim.Adam(model.parameters(), betas=(0.9, 0.98), eps=1e-09),
-        init_lr=4, d_model=500, n_warmup_steps=4000)
+        init_lr=3, d_model=500, n_warmup_steps=4000)
     print('*'*150)
     print('-'*65 + "  START TRAIN  " + '-'*65)
     run(Epoch, model, optimizer, device, train_data, train_traj_idxx, test_data, test_traj_idxx, log, Batch_size)
