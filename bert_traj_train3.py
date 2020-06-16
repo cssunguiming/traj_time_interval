@@ -213,7 +213,7 @@ def run(epoch, model, optimizer, device, train_data, train_traj_idxx, valid_data
 def main(Epoch=400, Bert_Pretrain=False, Batch_size=8, Pretrained=False, log='predict'):
 
     head_n = 12
-    d_model = 600
+    d_model = 480
     N_layers = 12
     dropout = 0.4
 
