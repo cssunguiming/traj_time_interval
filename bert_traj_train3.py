@@ -258,7 +258,7 @@ def main(Epoch=200, Bert_Pretrain=False, Batch_size=8, Pretrained=False, log='pr
 
     optimizer = Trans_Optim(
         torch.optim.Adam(model.parameters(), betas=(0.9, 0.98), eps=1e-09),
-        init_lr=2, d_model=768, n_warmup_steps=4000)
+        init_lr=4, d_model=500, n_warmup_steps=4000)
     print('*'*150)
     print('-'*65 + "  START TRAIN  " + '-'*65)
     run(Epoch, model, optimizer, device, train_data, train_traj_idxx, test_data, test_traj_idxx, log, Batch_size)
